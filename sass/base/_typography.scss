@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+//font-family
+$ff: (
+    hero: "'Inter', sans-serif",
+    plain: "'Lexend Deca', sans-serif"
+);
+
+//font-size
+$fs: (
+    base: 15px,
+    sm: 1.25rem,
+    md: 1.5rem,
+    lg: 1.75rem,
+    xl: 2rem,
+    xxl: 2.5rem
+);
+
+//font-weight
+$fw: (
+    base: 400,
+    bold: 700,
+);
+
+:root {
+    @each $key, $val in $ff {
+        --ff-#{$key}: #{$val};
+    }
+    @each $key, $val in $fs {
+        --fs-#{$key}: #{$val};
+    }
+    @each $key, $val in $fw {
+        --fw-#{$key}: #{$val};
+    }
+}

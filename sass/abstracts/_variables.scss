@@ -1,0 +1,32 @@
+//border-radius
+$br: 1rem;
+
+//margin
+$mar: (
+    base: 1em,
+    sm: 1.25em,
+    md: 1.5em,
+    lg: 1.75em,
+    xl: 2em,
+    xxl: 2.5em
+);
+
+//padding
+
+$pad: (
+    base: 1em,
+    sm: 1.25em,
+    md: 1.5em,
+    lg: 1.75em,
+    xl: 2em,
+    xxl: 2.5em
+);
+
+:root {
+    @each $key, $val in $mar {
+        --mar-#{$key}: #{$val};
+    }
+    @each $key, $val in $pad {
+        --pad-#{$key}: #{$val};
+    }
+}

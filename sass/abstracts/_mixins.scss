@@ -1,0 +1,18 @@
+@mixin stat() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+};
+
+@mixin hero() {
+    font-family: var(--ff-hero);
+    color: var(--clr-wt);
+};
+
+@mixin parag() {
+    font-family: var(--ff-plain);
+    color: var(--clr-trans-wt-stats);
+    font-size: var(--fs-base)
+};
+

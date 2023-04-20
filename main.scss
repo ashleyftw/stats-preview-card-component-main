@@ -1,0 +1,103 @@
+@use 'sass/base/reset' as *;
+@use 'sass/base/colors' as *;
+@use 'sass/base/typography' as *;
+@use 'sass/abstracts/mixins' as *;
+@use 'sass/abstracts/variables' as *;
+
+body {
+    background-color: var(--clr-v-dk-bl);
+    color: var(--clr-trans-wt);
+    text-align: center;
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    border-radius: $br;
+    overflow: hidden;
+    background-color: var(--clr-dk-des-bl);
+    margin: var(--mar-lg);
+    h1 {
+        @include hero();
+        line-height: 2rem;
+        font-size: var(--fs-lg);
+        margin: var(--mar-base) 0;
+    
+        span {
+            color: var(--clr-accent);
+        }
+    };
+    p {
+        @include parag();
+    };
+};
+
+.img-container {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-image: url('images/image-header-mobile.jpg');
+        background-color: var(--clr-accent);
+        background-blend-mode: multiply;   
+        background-size: cover; 
+    }
+}
+
+.text-content {
+    padding: var(--pad-base) var(--pad-xl);
+}
+
+.stat {
+    margin: var(--mar-base);
+    h2 {
+        @include hero();
+    }
+    p {
+        @include parag();
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+    .upc {
+        text-transform: uppercase;
+    }
+}
+
+.attribution { 
+    font-size: 0.7rem; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 750px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 70rem;
+        text-align: left;
+
+        .img-container {
+            order: 2
+        }
+        .text-content {
+            padding: var(--pad-xl) 5em;
+            h1 {
+                font-size: var(--fs-xl);
+            }
+            .stats{
+                display: flex;
+                justify-content: space-between;
+                .stat {
+                    @include stat();
+                    margin: 0;
+                    padding-top: 4em;
+                }
+            }
+        }
+    }
+}

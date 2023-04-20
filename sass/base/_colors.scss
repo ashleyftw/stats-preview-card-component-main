@@ -1,0 +1,20 @@
+$colors : (
+    primary: (
+        v-dk-bl: hsl(233, 47%, 7%),
+        dk-des-bl: hsl(244, 38%, 16%),
+        accent: hsl(277, 64%, 61%)
+    ),
+    neutral: (
+        wt: hsl(0, 0%, 100%),
+        trans-wt: hsla(0, 0%, 100%, 0.75),
+        trans-wt-stats: hsla(0, 0%, 100%, 0.6)
+    )
+);
+
+:root {
+    @each $cat, $clrs in $colors {
+        @each $clr, $val in $clrs {
+            --clr-#{$clr}: #{$val};
+        }
+    }
+};
